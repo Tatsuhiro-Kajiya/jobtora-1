@@ -2,13 +2,15 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| nickname | string | null: false |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
-| age      | string | null: false |
+| Column      | Type   | Options     |
+| ----------- | ------ | ----------- |
+| nickname    | string | null: false |
+| last_name   | string | null: false |
+| first_name  | string | null: false |
+| email       | string | null: false |
+| password    | string | null: false |
+| age         | string | null: false |
+
 
 ### Association
 
@@ -20,11 +22,11 @@
 | Column         | Type       | Options                        |
 | -------------- | -----------| -------------------------------|
 | name           | string     | null: false                    |
-| genre          | integer    | null: false                    |
+| genre_id       | integer    | null: false                    |
 | place_id       | integer    | null: false                    |
 | explanation    | text       | null: false                    |
 | plan           | text       |                                |
-| wifi           | integer    | null: false                    |
+| wifi_id        | integer    | null: false                    |
 | budget         | string     |                                |
 | user           | references | null: false, foreign_key: true |
 
@@ -35,13 +37,13 @@
 
 ## comments テーブル
 
-| Column      | Type       | Options                        |
-| ----------- | ---------- | ------------------------------ |
-| title       | string     | null: false                    |
-| evaluation  | integer    |                                |
-| review      | text       | null: false                    |
-| user        | references | null: false, foreign_key: true |
-| spot        | references | null: false, foreign_key: true |
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| title         | string     | null: false                    |
+| evaluation_id | integer    |                                |
+| review        | text       | null: false                    |
+| user          | references | null: false, foreign_key: true |
+| spot          | references | null: false, foreign_key: true |
 
 ### Association
 
