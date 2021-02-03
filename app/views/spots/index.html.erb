@@ -1,2 +1,35 @@
-<h1>Spots#index</h1>
-<p>Find me in app/views/spots/index.html.erb</p>
+<div class="big-bg">
+  <header class="page-header wrapper">
+    <%= link_to image_tag("logo.jpg", class: :logo), root_path%>
+    <nav>
+      <ul class="main-nav">
+        <li><a href="news.html">Jobtoraとは?</a></li>
+        <li><a href="menu.html">MENU</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <!-- ユーザー登録機能実装時修正 -->
+    <%# <div class="login-nav">  %>
+      <%# <%= link_to "ログアウト", root_path,  method: :delete, class: :nav__logout %>
+      <%# <%= link_to "新規投稿", root_path, class: :nav__btn %> 
+    <%# </div>  %>
+    <!-- ユーザー登録機能実装時修正 -->
+    <div class="login-nav">
+      <%= link_to "ログイン", root_path, class: :nav__btn %>
+      <%= link_to "新規登録", root_path, class: :nav__btn %>
+    </div>
+  </header>
+
+  <div class="menu-content wrapper">
+    <h2 class="page-title">Topics</h2>
+    <p>
+      JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明
+    </p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrapper">
+    <p><small>&copy; Jobtora</small></p>
+  </div>
+</footer>
