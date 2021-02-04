@@ -3,21 +3,23 @@
     <%= link_to image_tag("logo.jpg", class: :logo), root_path%>
     <nav>
       <ul class="main-nav">
-        <li><a href="news.html">Jobtoraとは?</a></li>
-        <li><a href="menu.html">MENU</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
+        <li><a href="menu.html">Jobtoraとは?</a></li>
       </ul>
     </nav>
-    <!-- ユーザー登録機能実装時修正 -->
-    <%# <div class="login-nav">  %>
-      <%# <%= link_to "ログアウト", root_path,  method: :delete, class: :nav__logout %>
-      <%# <%= link_to "新規投稿", root_path, class: :nav__btn %> 
-    <%# </div>  %>
-    <!-- ユーザー登録機能実装時修正 -->
-    <div class="login-nav">
-      <%= link_to "ログイン", root_path, class: :nav__btn %>
-      <%= link_to "新規登録", root_path, class: :nav__btn %>
-    </div>
+    <% if user_signed_in? %>
+      <%= link_to "現在のユーザー: #{current_user.nickname}さん", root_path, class: :user__nickname %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <div class="login-nav">
+        <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class: :nav__btn %>
+        <%= link_to "新規投稿", root_path, class: :nav__btn %> 
+      </div>
+    <% else %> 
+      <div class="login-nav">
+        <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+        <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+      </div>
+    <% end %>
   </header>
 
   <div class="menu-content wrapper">
