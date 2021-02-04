@@ -9,7 +9,7 @@
 | first_name  | string | null: false |
 | email       | string | null: false |
 | password    | string | null: false |
-| age         | string | null: false |
+| age         | string |             |
 
 
 ### Association
