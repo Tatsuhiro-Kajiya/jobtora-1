@@ -90,7 +90,7 @@ img {
   padding: 0.4em 1.6em;
   font-size: 1.0em;
   height: 40px;
-  color: #87CEFA;
+  color: #432;
   text-decoration: none;
   user-select: none;
   border: 1px #87CEFA solid;
@@ -101,24 +101,18 @@ img {
   color: #fff;
   background: #87CEFA;
 }
-
-/* ユーザー登録機能実装時修正 */
-/* .nav__logout{
-  display: inline-block;
+.user__nickname {
+  margin-top: 34px;
   padding: 0.4em 1.6em;
-  font-size: 17px;
-  color: seagreen;
+  font-size: 1.0em;
+  height: 40px;
+  color: #432;
   text-decoration: none;
   user-select: none;
-  border: 1px seagreen solid;
+  border: 1px #87CEFA solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
-.nav__logout:hover{
-  color: #fff;
-  background: seagreen;
-} */
-
 
 /* トップページ
 ------------------------------- */
@@ -158,6 +152,7 @@ img {
     object-fit: cover;
 }
 
+
 /* フッター
 ------------------------------- */
 footer {
@@ -170,6 +165,7 @@ footer p {
     color: #fff;
     font-size: 0.875rem;
 }
+
 
 /* モバイル版
 ------------------------------- */
