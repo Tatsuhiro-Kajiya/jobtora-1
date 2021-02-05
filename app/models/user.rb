@@ -9,4 +9,6 @@ class User < ApplicationRecord
     validates :last_name
     validates :first_name
   end
+
+  has_many :spots
 end
