@@ -152,6 +152,29 @@ img {
     object-fit: cover;
 }
 
+.spot-lists {
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+}
+
+.spot-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  background-color: #FFF;
+}
+
+
+.spot-img-content {
+  position: relative;
+}
+
+.spot-img {
+  width: 33vh;
+  height: 33vh;
+}
 
 /* フッター
 ------------------------------- */
