@@ -12,7 +12,7 @@
     <% if user_signed_in? %>
       <div class="login-nav">
         <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class: :nav__btn %>
-        <%= link_to "新規投稿", new_spot_path, class: :nav__btn %> 
+        <%= link_to "SPOT投稿", new_spot_path, class: :nav__btn %> 
       </div>
     <% else %> 
       <div class="login-nav">
@@ -29,6 +29,25 @@
     </p>
   </div>
 </div>
+
+<%# SPOT一覧 %>
+<div class="spot-lists">
+  <% @spots.each do |spot| %>
+    <li class="list">
+      <%= link_to spots_path(spot.id), method: :get do %>
+        <div class="spot-imag-content">
+          <%= image_tag spot.image, class:"spot-img" if spot.image.attached? %>
+        </div>
+        <div class="spot-info">
+          <p class="spot-date"><%= spot.name %></p>
+          <p class="spot-date"><%= spot.place.name %></p>
+          <p class="spot-date"><%= spot.explanation %></p>
+        <div>
+      <% end %>
+    </li>
+  <% end %>
+</div>
+<%# SPOT一覧 %>
 
 <footer>
   <div class="wrapper">
