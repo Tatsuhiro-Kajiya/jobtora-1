@@ -1,0 +1,48 @@
+<div class="container">
+  <h2>投稿する</h2>
+  <%= form_with(model: @spot, local: true) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, "スポットの名称" %><br />
+      <%= f.text_field :name, class:"input-default", id:"name", placeholder:"例) 〇〇ホテル" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :genre_id, "ジャンル" %><br />
+      <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"input-default", id:"spot_genre"}) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :place_id, "場所" %><br />
+      <%= f.collection_select(:place_id, Place.all, :id, :name, {}, {class:"input-default", id:"spot_place"}) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :explanation, "説明" %><br />
+      <%= f.text_area :explanation, class:"input-default", id:"explanation" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :plan, "プラン" %><br />
+      <%= f.text_area :plan, class:"input-default", id:"plan", placeholder:"例) 1週間宿泊プラン利用" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :wifi_id, "Wifi(通信環境)" %><br />
+      <%= f.collection_select(:wifi_id, Wifi.all, :id, :name, {}, {class:"input-default", id:"spot_wifi"}) %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :budget, "予算" %><br />
+      <%= f.text_area :budget, class:"input-default", id:"budget", placeholder:"例) 100000" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :image, "スポットの画像" %><br />
+      <%= f.file_field :image %>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit "投稿する", class: :form__btn  %>
+    </div>
+  <% end %>
+</div>
