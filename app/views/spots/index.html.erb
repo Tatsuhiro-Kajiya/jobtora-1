@@ -34,7 +34,7 @@
 <div class="spot-lists">
   <% @spots.each do |spot| %>
     <li class="list">
-      <%= link_to spots_path(spot.id), method: :get do %>
+      <%= link_to spot_path(spot.id), method: :get do %>
         <div class="spot-imag-content">
           <%= image_tag spot.image, class:"spot-img" if spot.image.attached? %>
         </div>

@@ -17,6 +17,11 @@ class SpotsController < ApplicationController
     end
   end
 
+  def show
+    @spot = Spot.find(params[:id])
+  end
+
+  
   private
   def spot_params
     params.require(:spot).permit(:name, :genre_id, :place_id, :explanation, :plan, :wifi_id, :budget, :image).merge(user_id: current_user.id)
