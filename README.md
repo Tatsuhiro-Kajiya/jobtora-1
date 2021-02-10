@@ -40,7 +40,7 @@
 | Column        | Type       | Options                        |
 | ------------- | ---------- | ------------------------------ |
 | title         | string     | null: false                    |
-| evaluation_id | integer    |                                |
+| evaluation_id | integer    | null: false                    |
 | review        | text       | null: false                    |
 | user          | references | null: false, foreign_key: true |
 | spot          | references | null: false, foreign_key: true |
