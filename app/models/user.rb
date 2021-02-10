@@ -11,4 +11,5 @@ class User < ApplicationRecord
   end
 
   has_many :spots
+  has_many :comments
 end
