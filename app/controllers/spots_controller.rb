@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_spot, only: [:show, :edit]
+  before_action :set_spot, only: [:show, :edit, :destroy]
   
   def index
     @spots = Spot.order("created_at DESC")
@@ -34,6 +34,14 @@ class SpotsController < ApplicationController
       redirect_to spot_path
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @spot.destroy
+      redirect_to root_path
+    else
+      render :show
     end
   end
 

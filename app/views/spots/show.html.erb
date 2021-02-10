@@ -11,7 +11,7 @@
 
     <% if current_user == @spot.user %> 
       <%= link_to '編集', edit_spot_path(@spot.id), method: :get, class: "item-red-btn" %>
-      <%= link_to '削除', root_path, method: :delete, class:'item-destroy' %>
+      <%= link_to '削除', spot_path(@spot.id), method: :delete, class:'item-destroy' %>
     <% end %>
 
     <table class="detail-table">
