@@ -141,7 +141,7 @@
 /* /商品の概要 */
 
 .comment-box {
-  width: 40vw;
+  width: 60vw;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
@@ -171,7 +171,10 @@
   min-width: 150px;
   font-size: 18px;
   border-radius: 100px;
-  margin-bottom: 2vh;
+  margin: 20px auto;
+}
+.comment-btn:hover {
+  color: green;
 }
 
 .comment-flag {
