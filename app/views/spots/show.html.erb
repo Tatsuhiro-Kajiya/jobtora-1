@@ -47,6 +47,51 @@
       </tbody>
     </table>
   </div>
+
+  <div class="comment-box">
+    <h2>コメント投稿</h2>
+    <% if user_signed_in? %>
+      <%= form_with(model: [@spot, @comment], local: true) do |f| %>
+        <div class="form-group">
+          <%= f.label :title, "コメントのタイトル" %><br />
+          <%= f.text_field :title, class:"input-default", id:"title" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :genre_id, "評価(星)" %><br />
+          <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"input-default", id:"spot_evaluation"}) %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :review, "レビューコメント" %><br />
+          <%= f.text_area :review, class:"input-default", id:"review" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit "コメントする", class:"comment-btn"  %>
+        </div>
+      <% end %>
+    <% else %>
+      <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    <% end %>
+  </div>
+  <div class="comments">
+      <h2>コメント一覧</h2>
+      <% @comments.each do |comment| %>
+        <p>
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %></strong>
+          <div class="comment-title">
+            <%= comment.title %>
+          </div>
+          <div class="comment-evaluation">
+            <%= "評価#{comment.evaluation.name}" %>
+          </div>
+          <div class="commment-review">
+           <%= comment.review %>
+          </div>
+        </p>
+      <% end %>
+    </div>
 </div>
 
 <%= render partial: "footer" %>
