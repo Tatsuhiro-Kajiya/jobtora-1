@@ -37,12 +37,10 @@ ActiveRecord::Schema.define(version: 2021_02_10_091707) do
     t.string "title", null: false
     t.integer "evaluation_id", null: false
     t.text "review", null: false
-    t.bigint "user_id"
-    t.bigint "spot_id"
+    t.integer "user_id"
+    t.integer "spot_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["spot_id"], name: "index_comments_on_spot_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "spots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -76,7 +74,5 @@ ActiveRecord::Schema.define(version: 2021_02_10_091707) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "comments", "spots"
-  add_foreign_key "comments", "users"
   add_foreign_key "spots", "users"
 end
