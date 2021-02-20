@@ -110,7 +110,23 @@ img {
   border: 1px #87CEFA solid;
   border-radius: 3px;
   transition: 0.4s ease;
+  background: rgba(255,255,255,.8);
 }
+.guset__login {
+  padding: 0.4em 1.6em;
+  font-size: 1.0em;
+  height: 40px;
+  color: #432;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #87CEFA solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+}
+.guset__login:hover{
+    color: #fff;
+    background: #87CEFA;
+  }
 
 /* トップページ
 ------------------------------- */
@@ -161,7 +177,7 @@ img {
 .spot-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #ffffff;
+  background-color: #ffffff, 0.5;
   margin: 10px;
   border: 1px #555555 solid;
   box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
