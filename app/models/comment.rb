@@ -1,5 +1,9 @@
 class Comment < ApplicationRecord
-  validates :evaluation_id, presence: true, numericality: { other_than: 0 }
+  with_options presence: true do
+    validates :title
+    validates :evaluation_id, numericality: { other_than: 0 }
+    validates :review
+  end
 
   belongs_to :user
   belongs_to :spot
