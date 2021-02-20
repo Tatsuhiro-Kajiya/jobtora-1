@@ -16,7 +16,18 @@ class User < ApplicationRecord
       validates :first_name
     end
   end
-
   has_many :spots
   has_many :comments
+
+  def self.guest
+    find_or_create_by!(email: 'guest1234@gmail.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.nickname = 'ゲスト'
+      user.last_name = 'ゲスト'
+      user.first_name = 'ゲスト'
+      user.age = 20
+    end
+  end
+  
 end
