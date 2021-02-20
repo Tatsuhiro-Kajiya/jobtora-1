@@ -23,14 +23,17 @@
   </header>
 
   <div class="menu-content wrapper">
-    <h2 class="page-title">Topics</h2>
-    <p>
-      JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明JobtoraのTopics説明
-    </p>
+    <h3 class="page-title">Jobtoraで新しい働き方探しに行こう</h3>
+    <%# <p class="sub-title">
+      こんな時代だからこその新しい働き方、こんな状況だからこその楽しみ方見つけて見ない？
+    </p> %>
   </div>
 </div>
 
 <%# SPOT一覧 %>
+<div class="spot-title">
+  <h3>NEW SPOT LIST</h3>
+</div>
 <div class="spot-lists">
   <% @spots.each do |spot| %>
     <li class="list">
@@ -48,4 +51,5 @@
   <% end %>
 </div>
 <%# SPOT一覧 %>
+
 <%= render partial: "footer" %>

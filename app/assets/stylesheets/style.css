@@ -30,16 +30,13 @@ img {
 
 /* 見出し */
 .page-title {
-    font-size: 5rem;
+    font-size: 4rem;
+    color: #555555;
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
     font-weight: normal;
-}
-.sub-title {
-    font-size: 1.375rem;
-    padding: 0 8px 8px;
-    border-bottom: 2px #0bd solid;
-    font-weight: normal;
+    background: rgba(255,255,255,.8);
+    margin: 0 auto;
 }
 
 /* ボタン */
@@ -164,7 +161,10 @@ img {
 .spot-lists>.list {
   width: 37vh;
   padding: 1vw;
-  background-color: #FFF;
+  background-color: #ffffff;
+  margin: 10px;
+  border: 1px #555555 solid;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
 }
 
 
@@ -176,11 +176,20 @@ img {
   width: 33vh;
   height: 33vh;
 }
+.spot-title {
+    text-align: center;
+    font-size: 25px;
+    color: #0bd;
+}
+.spot-date {
+    color: #555555;
+    font-size: 17px;
+}
 
 /* フッター
 ------------------------------- */
 footer {
-    background: #432;
+    background: #555555;
     text-align: center;
     padding: 26px 0;
     min-width: 100vw;
