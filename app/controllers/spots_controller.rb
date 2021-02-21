@@ -47,6 +47,10 @@ class SpotsController < ApplicationController
     end
   end
 
+  def search
+    @spots = Spot.search(params[:keyword])
+  end
+
   private
   def spot_params
     params.require(:spot).permit(:name, :genre_id, :place_id, :explanation, :plan, :wifi_id, :budget, :image).merge(user_id: current_user.id)

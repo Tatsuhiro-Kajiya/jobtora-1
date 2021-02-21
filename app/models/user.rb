@@ -29,5 +29,4 @@ class User < ApplicationRecord
       user.age = 20
     end
   end
-  
 end
