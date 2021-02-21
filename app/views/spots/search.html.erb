@@ -1,0 +1,42 @@
+<header class="page-header wrapper">
+  <%= link_to image_tag("logo.jpg", class: :logo), root_path%>
+  <nav>
+    <ul class="main-nav">
+      <li><a href="menu.html">Jobtoraとは?</a></li>
+    </ul>
+  </nav>
+  <% if user_signed_in? %>
+    <%= link_to "現在のユーザー: #{current_user.nickname}さん", root_path, class: :user__nickname %></li>
+  <% end %>
+  <% if user_signed_in? %>
+    <div class="login-nav">
+      <%= link_to "ログアウト", destroy_user_session_path,  method: :delete, class: :nav__btn %>
+      <%= link_to "SPOT投稿", new_spot_path, class: :nav__btn %> 
+    </div>
+  <% else %> 
+    <div class="login-nav">
+      <%= link_to 'ゲストログイン(閲覧用)', users_guest_sign_in_path, method: :post, class: :guset__login %>
+      <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+      <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+    </div>
+  <% end %>
+</header>
+
+<%# SPOT一覧 %>
+<div class="spot-title">
+  <h3>SPOT検索一覧</h3>
+</div>
+<%= form_with(url: search_spots_path, local: true, method: :get, class: "search-form") do |f| %>
+  <%= f.text_field :keyword, placeholder: "施設名を検索する", class: "search-input" %>
+  <%= f.submit "検索", class: "search-btn" %>
+<% end %>
+</div>
+<div class="spot-lists">
+  <% @spots.each do |spot| %>
+    <%= render partial: "spot", locals: { spot: spot } %>
+  <% end %>
+</div>
+<h4><%= link_to "トップページへ", root_path, class: :page__change %></h4>
+<%# SPOT一覧 %>
+
+<%= render partial: "footer" %>
