@@ -1,0 +1,12 @@
+<li class="list">
+  <%= link_to spot_path(spot.id), method: :get do %>
+    <div class="spot-imag-content">
+      <%= image_tag spot.image, class:"spot-img" if spot.image.attached? %>
+    </div>
+    <div class="spot-info">
+      <p class="spot-date"><%= spot.name %></p>
+      <p class="spot-date"><%= spot.place.name %></p>
+      <p class="spot-date"><%= spot.explanation %></p>
+    <div>
+  <% end %>
+</li>
