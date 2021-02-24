@@ -7,7 +7,7 @@
       </ul>
     </nav>
     <% if user_signed_in? %>
-      <%= link_to "現在のユーザー: #{current_user.nickname}さん", root_path, class: :user__nickname %></li>
+      <%= link_to "現在のユーザー: #{current_user.nickname}さん", user_path(current_user.id),  method: :get, class: :user__nickname %>
     <% end %>
     <% if user_signed_in? %>
       <div class="login-nav">

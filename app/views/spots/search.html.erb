@@ -6,7 +6,7 @@
     </ul>
   </nav>
   <% if user_signed_in? %>
-    <%= link_to "現在のユーザー: #{current_user.nickname}さん", root_path, class: :user__nickname %></li>
+    <%= link_to "現在のユーザー: #{current_user.nickname}さん", user_path(current_user.id), class: :user__nickname %></li>
   <% end %>
   <% if user_signed_in? %>
     <div class="login-nav">
@@ -36,7 +36,10 @@
     <%= render partial: "spot", locals: { spot: spot } %>
   <% end %>
 </div>
-<h4><%= link_to "トップページへ", root_path, class: :page__change %></h4>
 <%# SPOT一覧 %>
+
+<div class="page__change">
+  <%= link_to "トップページへ戻る", root_path %>
+</div>
 
 <%= render partial: "footer" %>

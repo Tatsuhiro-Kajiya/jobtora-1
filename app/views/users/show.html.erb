@@ -1,0 +1,34 @@
+<%= render partial: "spots/header" %>
+
+<div class="mypage-name">
+  <h1><%= "#{@user.nickname}さんのマイページ" %></h1>
+</div>
+
+<table class="detail-table">
+  <tbody>
+    <tr>
+      <th class="detail-item">ユーザー名</th>
+      <td class="detail-value"><%= @user.nickname %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">苗字</th>
+      <td class="detail-value"><%= @user.last_name %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">名前</th>
+      <td class="detail-value"><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">年齢</th>
+      <td class="detail-value"><%= @user.age %></td>
+    </tr>
+    <tr>
+      <th class="detail-item">メールアドレス</th>
+      <td class="detail-value"><%= @user.email %></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="page__change">
+  <%= link_to "トップページへ戻る", root_path %>
+</div>
