@@ -130,11 +130,6 @@ img {
 
 /* トップページ
 ------------------------------- */
-.big-bg {
-  background-image: url('main-bg.jpg');
-    min-height: 95vh;
-    min-width: 100vw;
-}
 .menu-content {
     max-width: 560px;
     margin-top: 10%;
