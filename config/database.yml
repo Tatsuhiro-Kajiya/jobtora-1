@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: jobtora_1_production
-  username: jobtora_1
-  password: <%= ENV['JOBTORA_1_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
