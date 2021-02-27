@@ -2,9 +2,9 @@
   <header class="page-header wrapper">
     <%= link_to image_tag("logo.jpg", class: :logo), root_path%>
     <nav>
-      <ul class="main-nav">
+      <%# <ul class="main-nav">
         <li><a href="menu.html">Jobtoraとは?</a></li>
-      </ul>
+      </ul> %>
     </nav>
     <% if user_signed_in? %>
       <%= link_to "現在のユーザー: #{current_user.nickname}さん", user_path(current_user.id),  method: :get, class: :user__nickname %>
