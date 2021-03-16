@@ -40,13 +40,16 @@
 
     <div class="form-group">
       <%= f.label :image, "スポットの画像" %><br />
-      <%= f.file_field :image %>
+      <%= f.file_field :images, name: 'spot[images][]', id: 'spot_image' %>
     </div>
 
     <div class="form-group">
       <%= f.submit "投稿する", class: :form__btn  %>
     </div>
+    <div id="image-list"></div>
   <% end %>
+
+  <%= image_tag @spot.image, id: 'image' if @spot.image.present? %>
 </div>
 
 <%= render partial: "footer" %>
