@@ -50,6 +50,9 @@ img {
 .button:hover {
     background: #0090aa;
 }
+.form__btn{
+    margin-bottom: 30px;
+}
 
 /* HEADER
 ------------------------------- */
@@ -245,6 +248,9 @@ footer p {
     }
     .big-box img {
         height: 100%;
+    }
+    .spot_image{
+        width: 60%;
     }
 
     /* HEADER */
